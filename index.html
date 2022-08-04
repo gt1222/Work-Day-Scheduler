@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- linked stylesheets -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,11 +19,12 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
   <body>
+    <!-- header displaying "Work Day Scheduler" the description and the current day -->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
@@ -30,9 +32,67 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <div class="row time-block" id="hour-9">
+        <div class="hour col-1">9AM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-10">
+        <div class="hour col-1">10AM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-11">
+        <div class="hour col-1">11AM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-12">
+        <div class="hour col-1">12PM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-13">
+        <div class="hour col-1">1PM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-14">
+        <div class="hour col-1">2PM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-15">
+        <div class="hour col-1">3PM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-16">
+        <div class="hour col-1">4PM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
+      <div class="row time-block" id="hour-17">
+        <div class="hour col-1">5PM</div>
+        <textarea class="description col-10"></textarea>
+        <button class="saveBtn col-1"></button>
+      </div>
+
     </div>
 
+    <footer><p>Made with ❤ by <a href="https://github.com/gt1222">Gia Tran</a></p></footer>
+
+    <!-- linked javascripts: jQuery, moment.js and my own -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="./Assets/script.js"></script>
   </body>
 </html>
