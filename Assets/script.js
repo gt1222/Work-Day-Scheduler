@@ -1,6 +1,7 @@
 var saveButton = document.querySelector(".saveBtn");
+var description = document.querySelector(".description");
 
-//displaying the current date
+//displaying the current date from moment.js
 var currentDay = $("#currentDay");
 
 function displayDate() {
@@ -26,13 +27,47 @@ function timeBlockColor() {
 }
 
 //local storage
+// function saveInput() {
+//     var taskInput = {
+//         task: description.value,
+//     };
+//     localStorage.setItem("taskInput", JSON.stringify(taskInput));
+//     description.textContent = taskInput
+// }
+
 // saveButton.addEventListener("click", function (event) {
 //     event.preventDefault();
 
-//     var task = 
+//     var task = document.querySelector(".description").value;
+//     localStorage.setItem("task", task);
+//     taskEntered();
+// });
 
 
-// };
+// var task = localStorage.getItem("task");
+// description.textContent = task;
+
+// saveButton.addEventListener("click", function(event) {
+//     event.preventDefault(),
+
+//     // task = document.querySelector(".description");
+
+//     localStorage.setItem("task", description)
+// })
+
+function saveInput () {
+    var task = localStorage.getItem("task");
+    description.textContent = task;
+}
+
+saveButton.addEventListener("click", function(event){
+    event.preventDefault();
+
+    var task = document.querySelector(".description").value;
+
+    localStorage.setItem("task", task);
+    saveInput();
+})
 
 displayDate();
 timeBlockColor()
