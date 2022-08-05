@@ -10,14 +10,14 @@ function displayDate() {
 
 // function time-block to color code current hour, future hour and past hour
 function timeBlockColor() {
-    var hour = moment().hour();
+    var currentHour = moment().hour();
 
     $(".time-block").each(function () {
-        var currentHour = parseInt($(this).attr("id"));
+        var hour = parseInt($(this).attr("id"));
 
-        if (currentHour === hour) {
+        if (hour === currentHour) {
             $(this).addClass("present");
-        } else if (currentHour > hour) {
+        } else if (hour > currentHour) {
             $(this).addClass("future");
         } else {
             $(this).addClass("past");
