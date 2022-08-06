@@ -68,16 +68,25 @@ function timeBlockColor() {
 // })
 
 // 
-// function saveInput () {
-//     var task = document.querySelector(".description").value;
-//     localStorage.setItem("task", task);
-// }
+function saveInput() {
+    var task = document.querySelector(".description").value;
+    localStorage.setItem("task", task);
+}
 
-// saveButton.addEventListener("click", function(event){
-//     event.preventDefault();
-//     saveInput();
-// })
+function getInput() {
+    var getInput = localStorage.getItem("task");
+    description.textContent = getInput; 
+}
 
+saveButton.addEventListener("click", function(event){
+    event.preventDefault();
+    saveInput();
+    getInput();
+})
+
+function init() {
 displayDate();
-timeBlockColor()
-
+timeBlockColor();
+getInput();
+}
+init()
