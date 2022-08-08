@@ -1,6 +1,3 @@
-var saveButton = document.querySelector(".saveBtn");
-var description = document.querySelector(".description");
-
 //displaying the current date from moment.js
 var currentDay = $("#currentDay");
 
@@ -17,7 +14,7 @@ function timeBlockColor() {
 
     $(".time-block").each(function () {
         var hour = parseInt($(this).attr("id"));
-        console.log(this);
+        // console.log(this);
 
         if (hour === currentHour) {
             $(this).addClass("present");
@@ -38,55 +35,44 @@ function timeBlockColor() {
 }
 
 
-//local storage
+function getInput() {
+    $(".hour").each(function() {
+        var time = $(this).text();
+        // console.log(time)
+        var getInput = localStorage.getItem(time);
+        // console.log(getInput);
+
+        if(getInput !== null) {
+            $(this).siblings(".description").val(getInput);
+        };
+    });
+}
+
+$(".container").on("click", ".saveBtn", function(event){
+    event.preventDefault();
+
+    var time = $(this).siblings(".hour").text();
+    var task = $(this).siblings(".description").val();
+
+    localStorage.setItem(time, task
+    getInput();
+});
+
+// // saves input to local storage
 // function saveInput() {
-//     var taskInput = {
-//         task: description.value,
-//     };
-//     localStorage.setItem("taskInput", JSON.stringify(taskInput));
-//     description.textContent = taskInput
-// }
-
-// saveButton.addEventListener("click", function (event) {
-//     event.preventDefault();
-
 //     var task = document.querySelector(".description").value;
 //     localStorage.setItem("task", task);
-//     taskEntered();
-// });
+// }
+
+// // gets input from local storate and create text content on screen
+// function getInput() {
+//     var getInput = localStorage.getItem("task");
+//     description.textContent = getInput; 
+// }
+//save button so when I refresh the data stays on the screen and runs save input and get input
 
 
-// var task = localStorage.getItem("task");
-// description.textContent = task;
 
-// saveButton.addEventListener("click", function(event) {
-//     event.preventDefault(),
-
-//     task = document.querySelector(".description");
-
-//     localStorage.setItem("task", description)
-// })
-
-// 
-function saveInput() {
-    var task = document.querySelector(".description").value;
-    localStorage.setItem("task", task);
-}
-
-function getInput() {
-    var getInput = localStorage.getItem("task");
-    description.textContent = getInput; 
-}
-
-saveButton.addEventListener("click", function(event){
-    event.preventDefault();
-    saveInput();
-    getInput();
-})
-
-function init() {
 displayDate();
 timeBlockColor();
 getInput();
-}
-init()
