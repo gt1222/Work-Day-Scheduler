@@ -49,11 +49,11 @@ function getInput() {
 }
 
 //when the save button is clicked, the key and value are saved to local storage so time and the task
-$(".container").on("click", ".saveBtn", function(event){
-    event.preventDefault();
+$(".container").on("click", ".saveBtn", function(event) {
+    event.preventDefault()
 
-    var time = $(this).siblings(".hour").text();
-    var task = $(this).siblings(".description").val();
+    var time = $(this).siblings(".hour").text()
+    var task = $(this).siblings(".description").val()
 
     localStorage.setItem(time, task)
     getInput();
