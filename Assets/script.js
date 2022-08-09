@@ -34,7 +34,7 @@ function timeBlockColor() {
     })
 }
 
-
+//to get info from local storage I loop through each time and get the input value and render to page
 function getInput() {
     $(".hour").each(function() {
         var time = $(this).text();
@@ -48,31 +48,18 @@ function getInput() {
     });
 }
 
+//when the save button is clicked, the key and value are saved to local storage so time and the task
 $(".container").on("click", ".saveBtn", function(event){
     event.preventDefault();
 
     var time = $(this).siblings(".hour").text();
     var task = $(this).siblings(".description").val();
 
-    localStorage.setItem(time, task
+    localStorage.setItem(time, task)
     getInput();
 });
 
-// // saves input to local storage
-// function saveInput() {
-//     var task = document.querySelector(".description").value;
-//     localStorage.setItem("task", task);
-// }
-
-// // gets input from local storate and create text content on screen
-// function getInput() {
-//     var getInput = localStorage.getItem("task");
-//     description.textContent = getInput; 
-// }
-//save button so when I refresh the data stays on the screen and runs save input and get input
-
-
-
+//call functions so it would run
 displayDate();
 timeBlockColor();
 getInput();
